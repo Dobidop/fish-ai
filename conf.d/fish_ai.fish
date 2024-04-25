@@ -26,7 +26,7 @@ function _fish_ai_install --on-event fish_ai_install
     echo "🥡 Setting up a virtual environment..."
     python3 -m venv ~/.fish-ai
     echo "🍬 Installing dependencies. This may take a few seconds..."
-    ~/.fish-ai/bin/pip install -qq "$(get_installation_url)"
+    ~/.fish-ai/bin/pip install -qq "(get_installation_url)"
     if ! test -f ~/.config/fish-ai.ini
         echo "👨‍🏫 You must create a configuration file before the plugin can be used!"
     end
@@ -34,7 +34,7 @@ end
 
 function _fish_ai_update --on-event fish_ai_update
     echo "🍬 Upgrading dependencies. This may take a few seconds..."
-    ~/.fish-ai/bin/pip install -qq --upgrade "$(get_installation_url)"
+    ~/.fish-ai/bin/pip install -qq --upgrade "(get_installation_url)"
 end
 
 function _fish_ai_uninstall --on-event fish_ai_uninstall
